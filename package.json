@@ -1,0 +1,51 @@
+{
+  "name": "drepo-contracts",
+  "version": "0.0.1",
+  "description": "a decentralized repository",
+  "keywords": [
+    "solidity",
+    "truffle"
+  ],
+  "author": "Fan Xu",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FanXuX/drepo-contracts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FanXuX/drepo-contracts/issues"
+  },
+  "homepage": "https://fanxu.de",
+  "types": "./types/web3-v1-contracts/types.d.ts",
+  "scripts": {
+    "generate-types": "typechain --target=truffle-v5 'build/contracts/**.json'",
+    "generate-frontend-types": "typechain --target=web3-v1 'build/contracts/**.json'",
+    "compile": "npm run solhint && truffle compile && npm run generate-types && npm run generate-frontend-types",
+    "clean": "rimraf build/* types/*",
+    "test": "npm run eslint && truffle test --stacktrace",
+    "eslint": "eslint . --ext .ts",
+    "solhint": "solhint 'contracts/**/*.sol'"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.13",
+    "@typechain/truffle-v5": "^5.1.0",
+    "@typechain/web3-v1": "^3.1.0",
+    "@types/bn.js": "^5.1.0",
+    "@types/chai": "^4.2.21",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.9.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "eslint": "^7.32.0",
+    "rimraf": "^3.0.2",
+    "solhint": "^3.3.6",
+    "truffle": "^5.4.9",
+    "ts-node": "^10.2.1",
+    "typechain": "^5.1.2",
+    "typescript": "^4.4.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.0",
+    "base64-sol": "^1.1.0"
+  }
+}
